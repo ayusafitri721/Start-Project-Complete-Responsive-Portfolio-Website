@@ -2,9 +2,21 @@
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
+// Fungsi untuk mengecek dan menyesuaikan state navbar berdasarkan lebar layar
+function adjustNavbarState() {
+    if (window.innerWidth > 768) {
+        navbar.classList.remove('active'); // Tutup menu di layar > 768px
+        menuIcon.classList.remove('bx-x'); // Kembalikan ikon ke hamburger
+    }
+}
+
+// Panggil saat halaman dimuat dan saat jendela di-resize
+window.addEventListener('load', adjustNavbarState);
+window.addEventListener('resize', adjustNavbarState);
+
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Toggle between hamburger and close icon
-    navbar.classList.toggle('active'); // Toggle navbar visibility
+    menuIcon.classList.toggle('bx-x'); // Toggle ikon antara hamburger dan close
+    navbar.classList.toggle('active'); // Toggle visibilitas navbar
 };
 
 /*========== scroll sections active link ==========*/
@@ -18,32 +30,25 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
-            links.classList.remove('active');
-            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-
-                
+                links.classList.remove('active');
+                document.querySelector(`header nav a[href*="${id}"]`).classList.add('active');
             });
-        };
+        }
     });
 
-
-    /*========== sticky nastickyvbar ==========*/
+    /*========== sticky navbar ==========*/
     let header = document.querySelector('.header');
-
     header.classList.toggle('sticky', window.scrollY > 100);
 
-
-    /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
-    menuIcon.classList.remove('bx-x'); // Toggle between hamburger and close icon
-    navbar.classList.remove('active'); // Toggle navbar visibility
-
-
-
+    // Hanya tutup navbar saat scroll jika di mode mobile (< 768px)
+    if (window.innerWidth <= 768) {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    }
 };
 
- 
 /*========== swiper ==========*/
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
@@ -60,14 +65,12 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-
-
 /*========== dark light mode ==========*/
 let darkModeIcon = document.querySelector('#darkMode-icon');
 
 darkModeIcon.addEventListener('click', () => {
     darkModeIcon.classList.toggle('bx-sun');
-    darkModeIcon.classList.toggle('bx-moon'); // Optional, if bx-moon needs to be toggled
+    darkModeIcon.classList.toggle('bx-moon');
     document.body.classList.toggle('dark-mode');
 });
 

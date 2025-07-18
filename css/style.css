@@ -110,6 +110,7 @@ body {
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
+    display: none;
     
 }
 
@@ -206,7 +207,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: professionRotate13s ease-out infinite;
+    animation: professionRotate 13s ease-out infinite;
 
 }
 
@@ -214,22 +215,27 @@ section {
     0%, 20% {
         transform: rotate(0deg);
     }
-        25%, 45% {
+    25%, 45% {
         transform: rotate(-90deg);
     }
-
-        50%, 70% {
+    50%, 70% {
         transform: rotate(-180deg);
     }
-
-        75%, 95% {
+    75%, 95% {
         transform: rotate(-270deg);
     }
-        100% {
+    100% {
         transform: rotate(-360deg);
     }
+}
 
-
+/* Atau bisa juga pakai yang lebih simple: */
+@keyframes professionRotateSimple {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-90deg); }
+    50% { transform: rotate(-180deg); }
+    75% { transform: rotate(-270deg); }
+    100% { transform: rotate(-360deg); }
 }
 
 .home .profession-box .profession {
@@ -284,14 +290,13 @@ section {
     border-bottom: 384px solid var(--main-color);
     border-left: 384px solid transparent;
 }
-
 .home-img img {
     position: absolute;
-    bottom: -30px;
+    bottom: -40px;
     right: 0;
-    height: 90%;
+    height: 100%;
     width: auto;
-    max-width: 45%;
+    max-width: 55%;
     object-fit: cover;
     pointer-events: none;
 }
@@ -710,7 +715,7 @@ span {
 
 @media (max-width: 768px) {
     #menu-icon {
-        display: none;
+        display: block;
     }
 
     #darkMode-icon {
@@ -735,7 +740,7 @@ span {
     }
 
     .navbar.active {
-        display: block;
+        display: none;
     }
 
     .navbar a {
