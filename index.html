@@ -25,7 +25,7 @@
   <body>
     <!-- header design -->
     <header class="header">
-      <a href="#" class="logo">Portofolio.</a>
+      <a href="#" class="logo">Ayu Safitri.</a>
 
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
@@ -51,13 +51,26 @@
         </p>
 
         <div class="social-media">
-          <a href="#"><i class="bx bxl-facebook"></i></a>
-          <a href="#"><i class="bx bxl-twitter"></i></a>
-          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-          <a href="#"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/ayusafitri721" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="https://discord.gg/invite-link-kamu" target="_blank"
+            ><i class="bx bxl-discord"></i
+          ></a>
+          <a href="https://www.instagram.com/ayysa.f/" target="_blank"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/ayusafitri21/" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
         </div>
 
-        <a href="#" class="btn">Download CV</a>
+        <a
+          href="files/CV_AYU_SAFITRI.pdf"
+          class="btn"
+          download="CV-Ayu-Safitri.pdf"
+          >Download CV</a
+        >
       </div>
 
       <div class="profession-container">
@@ -95,7 +108,7 @@
       <div class="about-img">
         <img src="images/about.png" alt="" />
       </div>
-
+      <!-- 
       <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
         <h3>Hi, I'm Here To Help Your Next Project!</h3>
@@ -107,10 +120,67 @@
           Voluptatibus!
         </p>
         <a href="#" class="btn">Read More</a>
+      </div> -->
+      <!-- OPSI 1: Modal/Pop-up Box -->
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Hi, I'm Here To Help Your Next Project!</h3>
+        <p>
+          I'm a passionate web developer and designer with expertise in creating
+          modern, responsive websites and user-friendly applications. With a
+          strong foundation in front-end and back-end technologies, I transform
+          ideas into digital experiences that engage users and drive results.
+        </p>
+        <a href="#" class="btn" onclick="openModal()">Read More</a>
+      </div>
+
+      <!-- Modal Pop-up -->
+      <div id="aboutModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>
+            About <span style="color: var(--main-color)">Ayu Safitri</span>
+          </h2>
+          <div class="modal-body">
+            <p>
+              My journey in web development started with curiosity and has
+              evolved into a passion for creating innovative digital solutions.
+              I specialize in modern JavaScript frameworks, responsive design,
+              and user experience optimization.
+            </p>
+            <h3>My Expertise:</h3>
+            <ul>
+              <li>🚀 Frontend Development (HTML, CSS, JavaScript, React)</li>
+              <li>💻 Backend Development (Node.js, PHP, Python, Java, Kotlin, Dart)</li>
+              <li>🎨 UI/UX Design & Prototyping</li>
+              <li>📱 Mobile-First Responsive Design</li>
+              <li>⚡ Performance Optimization</li>
+            </ul>
+            <p>
+              Whether it's building a corporate website, developing a mobile
+              app, or creating custom web applications, I approach each project
+              with creativity, attention to detail, and a commitment to
+              excellence.
+            </p>
+            <h3>My Philosophy:</h3>
+            <p>
+              I believe that great websites are not just about beautiful design,
+              but also about functionality, user experience, and achieving
+              business goals. Every line of code I write is crafted with purpose
+              and passion.
+            </p>
+            <p>
+              When I'm not coding, I enjoy staying updated with the latest web
+              technologies, contributing to open-source projects, and helping
+              fellow developers in the community. Let's work together to bring
+              your vision to life!
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- services section design -->
+    services section design
     <section class="services" id="services">
       <h2 class="heading">My <span> Services</span></h2>
 
@@ -217,111 +287,123 @@
         </div>
      </section> -->
 
-    <!-- portfolio section design -->
-    <section class="portfolio" id="portofolio">
-      <h2 class="heading">Latest <span>Project</span></h2>
+   <!-- portfolio section design -->
+<section class="portfolio" id="portofolio">
+  <h2 class="heading">Latest <span>Project</span></h2>
 
-      <div class="portfolio-slider">
-        <div class="portfolio-wrapper">
-          <div class="portfolio-box myPortfolioSwiper">
-            <div class="portfolio-content swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio1.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>E-Commerce Website</h4>
-                    <p>
-                      Modern online shopping platform with payment integration
-                      and user-friendly interface
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio2.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>Corporate Website</h4>
-                    <p>
-                      Professional business website with CMS integration and
-                      responsive design
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio3.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>Portfolio Website</h4>
-                    <p>
-                      Creative portfolio showcase with modern animations and
-                      smooth transitions
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio4.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>Mobile App UI</h4>
-                    <p>
-                      Modern mobile application user interface design with
-                      intuitive navigation
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 5 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio5.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>Dashboard Design</h4>
-                    <p>
-                      Administrative dashboard with data visualization and
-                      analytics features
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 6 -->
-              <div class="portfolio-slide swiper-slide">
-                <div class="portfolio-item">
-                  <img src="images/portfolio6.jpg" alt="" />
-                  <div class="portfolio-layer">
-                    <h4>Landing Page</h4>
-                    <p>
-                      Converting landing page with modern design approach and
-                      call-to-action optimization
-                    </p>
-                    <a href="#"><i class="bx bx-link-external"></i></a>
-                  </div>
-                </div>
+  <div class="portfolio-slider">
+    <div class="portfolio-wrapper">
+      <div class="portfolio-box myPortfolioSwiper">
+        <div class="portfolio-content swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/amrystore.png" alt="Amry Store E-commerce Website" />
+              <div class="portfolio-layer">
+                <h4>E-Commerce Website | Amry Store</h4>
+                <p>
+                  Modern online shopping platform with payment integration,
+                  user authentication, and responsive design built with modern web technologies
+                </p>
+                <a href="https://github.com/ayusafitri721/amrystore" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
               </div>
             </div>
+          </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+          <!-- Slide 2 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/ekskul_24.png" alt="Digital Attendance System" />
+              <div class="portfolio-layer">
+                <h4>Absensi Digital Website</h4>
+                <p>
+                  Digital attendance system for extracurricular activities with
+                  admin dashboard, real-time tracking, and automated reporting features
+                </p>
+                <a href="http://ekstrakulikuler24.infy.uk/" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/coffe_web.png" alt="Coffee Website" />
+              <div class="portfolio-layer">
+                <h4>Coffee Website | Kopi Nusantara</h4>
+                <p>
+                  Interactive coffee shop website featuring product catalog,
+                  smooth animations, and modern UI/UX design for local Indonesian coffee
+                </p>
+                <a href="https://ayu-safitri-kopi-unsantara.vercel.app/" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/mental_health_web.png" alt="Mental Health Website" />
+              <div class="portfolio-layer">
+                <h4>Mental Health Website</h4>
+                <p>
+                  Supportive mental health platform with resources, self-assessment tools,
+                  and calming interface design to promote mental wellness awareness
+                </p>
+                <a href="https://mental-health-ayu-safitri.vercel.app/" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/quiz_game.png" alt="Interactive Quiz Game" />
+              <div class="portfolio-layer">
+                <h4>Quiz Game Website</h4>
+                <p>
+                  Interactive quiz application with multiple categories,
+                  scoring system, timer functionality, and engaging user experience
+                </p>
+                <a href="https://quiz-game-delta-gules.vercel.app/" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="portfolio-slide swiper-slide">
+            <div class="portfolio-item">
+              <img src="images/myfinance_hd.jpg" alt="Personal Finance Tracker" />
+              <div class="portfolio-layer">
+                <h4>My Finance Tracker App</h4>
+                <p>
+                  Personal finance management application with expense tracking,
+                  budget planning, and financial analytics dashboard
+                </p>
+                <a href="https://github.com/ayusafitri721/myfinance-tracker" target="_blank">
+                  <i class="bx bx-link-external"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- testimonial design -->
     <div class="testimonial-container">
