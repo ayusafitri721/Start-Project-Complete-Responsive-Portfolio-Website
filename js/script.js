@@ -65,6 +65,8 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+
+
 /*========== dark light mode ==========*/
 let darkModeIcon = document.querySelector('#darkMode-icon');
 
@@ -86,3 +88,22 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img img, .services-container, .portofolio-box, .testimonial-wrapper, contact-form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var portfolioSwiper = new Swiper(".myPortfolioSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        grabCursor: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        speed: 800,
+        effect: 'slide',
+    });
+});
