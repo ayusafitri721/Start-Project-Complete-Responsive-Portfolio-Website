@@ -150,11 +150,11 @@
             </p>
             <h3>My Expertise:</h3>
             <ul>
-              <li>🚀 Frontend Development (HTML, CSS, JavaScript, React)</li>
-              <li>💻 Backend Development (Node.js, PHP, Python, Java, Kotlin, Dart)</li>
-              <li>🎨 UI/UX Design & Prototyping</li>
-              <li>📱 Mobile-First Responsive Design</li>
-              <li>⚡ Performance Optimization</li>
+              <li>Frontend Development (HTML, CSS, JavaScript, React.js, Next.js)</li>
+              <li>Backend Development (Node.js, PHP, Python, Java, Kotlin, Dart, Laravel)</li>
+              <li>UI/UX Design & Prototyping</li>
+              <li>Mobile Development</li>
+              <li>Performance Optimization</li>
             </ul>
             <p>
               Whether it's building a corporate website, developing a mobile
@@ -180,7 +180,7 @@
       </div>
     </section>
 
-    <!-- services section design -->
+ <!-- services section design -->
     <section class="services" id="services">
       <h2 class="heading">My <span> Services</span></h2>
 
@@ -189,31 +189,138 @@
           <i class="bx bx-code-alt"></i>
           <h3>Web Development</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut maiores
-            totam fuga cupiditate. Adipisci optio commodi velit deleniti qui
-            doloremque amet tempora.
+            I create modern, responsive, and user-friendly websites using the latest 
+            technologies and best practices to bring your digital vision to life.
           </p>
-          <a href="#" class="btn">Read More</a>
+          <a href="#" class="btn" onclick="openServiceModal('web')">Read More</a>
         </div>
         <div class="services-box">
           <i class="bx bx-mobile-alt"></i>
           <h3>Mobile Development</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut maiores
-            totam fuga cupiditate. Adipisci optio commodi velit deleniti qui
-            doloremque amet tempora.
+            Building native and cross-platform mobile applications that deliver 
+            seamless user experiences across iOS and Android devices.
           </p>
-          <a href="#" class="btn">Read More</a>
+          <a href="#" class="btn" onclick="openServiceModal('mobile')">Read More</a>
         </div>
         <div class="services-box">
           <i class="bx bx-paint"></i>
           <h3>Graphic Design</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut maiores
-            totam fuga cupiditate. Adipisci optio commodi velit deleniti qui
-            doloremque amet tempora.
+            Creating visually stunning designs that communicate your brand message 
+            effectively and leave a lasting impression on your audience.
           </p>
-          <a href="#" class="btn">Read More</a>
+          <a href="#" class="btn" onclick="openServiceModal('design')">Read More</a>
+        </div>
+      </div>
+
+      <!-- Web Development Modal -->
+      <div id="webModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeServiceModal('web')">&times;</span>
+          <h2>Web <span style="color: var(--main-color)">Development</span></h2>
+          <div class="modal-body">
+            <p>
+              I specialize in building modern, responsive websites that not only look 
+              great but also perform exceptionally well. From simple landing pages to 
+              complex web applications, I bring your ideas to life with clean code and 
+              innovative solutions.
+            </p>
+            <h3>What I Offer:</h3>
+            <ul>
+              <li>Custom Website Development from scratch</li>
+              <li>Responsive Design for all devices and screen sizes</li>
+              <li>E-commerce Solutions with secure payment integration</li>
+              <li>Content Management Systems (WordPress, custom CMS)</li>
+              <li>Web Application Development (React, Vue.js, Angular)</li>
+              <li>API Development and Integration</li>
+              <li>Performance Optimization and SEO</li>
+              <li>Website Maintenance and Support</li>
+            </ul>
+            <h3>Technologies I Use:</h3>
+            <p>
+              HTML5, CSS3, JavaScript, React, Vue.js, Node.js, PHP, Python, MySQL, 
+              MongoDB, Git, and many more modern web technologies.
+            </p>
+            <p>
+              Every website I create is built with attention to detail, following industry 
+              best practices for security, accessibility, and performance. Let's build 
+              something amazing together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Development Modal -->
+      <div id="mobileModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeServiceModal('mobile')">&times;</span>
+          <h2>Mobile <span style="color: var(--main-color)">Development</span></h2>
+          <div class="modal-body">
+            <p>
+              In today's mobile-first world, having a powerful mobile application is 
+              essential for business success. I develop high-quality native and 
+              cross-platform mobile apps that engage users and drive results.
+            </p>
+            <h3>What I Offer:</h3>
+            <ul>
+              <li>Native Android App Development (Java, Kotlin)</li>
+              <li>Cross-Platform Development (Flutter, React Native)</li>
+              <li>Mobile UI/UX Design and Prototyping</li>
+              <li>App Store Optimization and Deployment</li>
+              <li>Mobile Backend Development and API Integration</li>
+              <li>Push Notifications and Real-time Features</li>
+              <li>Payment Gateway Integration</li>
+              <li>App Testing and Quality Assurance</li>
+            </ul>
+            <h3>Development Approach:</h3>
+            <p>
+              I follow an agile development methodology, ensuring regular communication 
+              and iterative improvements throughout the project. Each app is tested 
+              thoroughly across multiple devices to ensure optimal performance.
+            </p>
+            <p>
+              Whether you need a simple utility app or a complex enterprise solution, 
+              I have the expertise to turn your mobile app vision into reality.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graphic Design Modal -->
+      <div id="designModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeServiceModal('design')">&times;</span>
+          <h2>Graphic <span style="color: var(--main-color)">Design</span></h2>
+          <div class="modal-body">
+            <p>
+              Great design is more than just aesthetics. It's about creating visual 
+              experiences that communicate effectively, engage your audience, and 
+              strengthen your brand identity. I combine creativity with strategic 
+              thinking to deliver designs that make an impact.
+            </p>
+            <h3>What I Offer:</h3>
+            <ul>
+              <li>Brand Identity Design (Logos, Color Schemes, Typography)</li>
+              <li>UI/UX Design for Web and Mobile Applications</li>
+              <li>Marketing Materials (Brochures, Flyers, Posters)</li>
+              <li>Social Media Graphics and Digital Assets</li>
+              <li>Infographics and Data Visualization</li>
+              <li>Presentation Design and Pitch Decks</li>
+              <li>Print Design and Layout</li>
+              <li>Icon and Illustration Design</li>
+            </ul>
+            <h3>Design Tools:</h3>
+            <p>
+              Adobe Photoshop, Illustrator, XD, Figma, Sketch, and other industry-standard 
+              design tools to create professional, high-quality graphics.
+            </p>
+            <p>
+              I believe in collaborative design process, working closely with clients to 
+              understand their vision and goals. Every design decision is made with purpose, 
+              ensuring your brand stands out in a crowded marketplace.
+            </p>
+          </div>
         </div>
       </div>
     </section>

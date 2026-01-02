@@ -1,22 +1,26 @@
 /*========== menu icon navbar ==========*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
 // Fungsi untuk mengecek dan menyesuaikan state navbar berdasarkan lebar layar
 function adjustNavbarState() {
-    if (window.innerWidth > 768) {
-        navbar.classList.remove('active'); // Tutup menu di layar > 768px
-        menuIcon.classList.remove('bx-x'); // Kembalikan ikon ke hamburger
-    }
+  if (window.innerWidth > 768) {
+    navbar.classList.remove("active"); // Tutup menu di layar > 768px
+    menuIcon.classList.remove("bx-x"); // Kembalikan ikon ke hamburger
+  }
 }
 
 // Panggil saat halaman dimuat dan saat jendela di-resize
-window.addEventListener('load', adjustNavbarState);
-window.addEventListener('resize', adjustNavbarState);
+window.addEventListener("load", adjustNavbarState);
+window.addEventListener("resize", adjustNavbarState);
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Toggle ikon antara hamburger dan close
-    navbar.classList.toggle('active'); // Toggle visibilitas navbar
+  menuIcon.classList.toggle("bx-x"); // Toggle ikon antara hamburger dan close
+  navbar.classList.toggle("active"); // Toggle visibilitas navbar
 };
 
 /*========== scroll sections active link ==========*/
@@ -37,102 +41,131 @@ window.onscroll = () => {
             });
         }
     });
-
-    /*========== sticky navbar ==========*/
+     /*========== sticky navbar ==========*/
     let header = document.querySelector('.header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    // Hanya tutup navbar saat scroll jika di mode mobile (< 768px)
-    if (window.innerWidth <= 768) {
+    /*========== remove navbar when click menu ==========*/
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+
+  // Hanya tutup navbar saat scroll jika di mode mobile (< 768px)
+  if (window.innerWidth <= 768) {
+    menuIcon.classList.remove("bx-x");
+    navbar.classList.remove("active");
+  }
+};
+
+
+/*========== remove navbar when click navlink ==========*/
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
         menuIcon.classList.remove('bx-x');
         navbar.classList.remove('active');
-    }
-};
+    });
+});
 
 /*========== swiper ==========*/
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+  slidesPerView: 1,
+  spaceBetween: 50,
+  loop: true,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
-
-
 /*========== dark light mode ==========*/
-let darkModeIcon = document.querySelector('#darkMode-icon');
+let darkModeIcon = document.querySelector("#darkMode-icon");
 
-darkModeIcon.addEventListener('click', () => {
-    darkModeIcon.classList.toggle('bx-sun');
-    darkModeIcon.classList.toggle('bx-moon');
-    document.body.classList.toggle('dark-mode');
+darkModeIcon.addEventListener("click", () => {
+  darkModeIcon.classList.toggle("bx-sun");
+  darkModeIcon.classList.toggle("bx-moon");
+  document.body.classList.toggle("dark-mode");
 });
 
 /*========== scroll reveal ==========*/
 ScrollReveal({
-    // reset: true,
-    distance: '80px',
-    duration: 2000,
-    delay: 200
+  // reset: true,
+  distance: "80px",
+  duration: 2000,
+  delay: 200,
 });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .portofolio-box, .testimonial-wrapper, contact-form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
-ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
+ScrollReveal().reveal(
+  ".home-img img, .services-container, .portofolio-box, .testimonial-wrapper, contact-form",
+  { origin: "bottom" }
+);
+ScrollReveal().reveal(".home-content h1, .about-img img", { origin: "left" });
+ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
+  origin: "right",
+});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var portfolioSwiper = new Swiper(".myPortfolioSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        grabCursor: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        speed: 800,
-        effect: 'slide',
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  var portfolioSwiper = new Swiper(".myPortfolioSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    effect: "slide",
+  });
 });
 
 function openModal() {
-    document.getElementById('aboutModal').style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  document.getElementById("aboutModal").style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent background scroll
 }
 
 function closeModal() {
-    document.getElementById('aboutModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restore scroll
+  document.getElementById("aboutModal").style.display = "none";
+  document.body.style.overflow = "auto"; // Restore scroll
 }
 
 // Close modal when clicking outside
-window.onclick = function(event) {
-    const modal = document.getElementById('aboutModal');
-    if (event.target === modal) {
-        closeModal();
-    }
-}
+window.onclick = function (event) {
+  const modal = document.getElementById("aboutModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
 
 // Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeModal();
-    }
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
 });
 
+// Service Modal Functions - TAMBAHKAN INI
+function openServiceModal(serviceType) {
+  event.preventDefault();
+  const modal = document.getElementById(serviceType + "Modal");
+  if (modal) {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+}
 
-
-
+function closeServiceModal(serviceType) {
+  const modal = document.getElementById(serviceType + "Modal");
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+}

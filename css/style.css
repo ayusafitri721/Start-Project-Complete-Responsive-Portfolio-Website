@@ -939,7 +939,7 @@ span {
     }
 
     .navbar.active {
-        display: none;
+        display: block;
     }
 
     .navbar a {
